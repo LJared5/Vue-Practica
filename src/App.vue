@@ -4,8 +4,8 @@
 
 <template>
   <div>
-    <h1>Tabla De Datos</h1>
-      <DataTable />   
+    <h1>Tabla de Datos</h1>
+      <DataTable />
   </div>
 </template>
 

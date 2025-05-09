@@ -5,6 +5,7 @@ import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 
 import { ref } from 'vue'
+
 const nombre = ref('')
 const apellido = ref('')
 const edad = ref('')
@@ -25,52 +26,37 @@ function guardarDatos() {
     personas.value.push(nuevaPersona)
 }
 
-
 </script>
 <template>
-    <div class="form-container">
-        <div class="card flex justify-center">
-            <InputText name= "Nombre" type="text" v-model="nombre" placeholder="Nombre" />
-        </div>
-        <div class="card flex justify-center">
-            <InputText name= "Apellido" type="text" v-model="apellido" placeholder="Apellido" />
-        </div>
-        <div class="card flex justify-center">
-            <InputText name= "Edad" type="number" v-model="edad" placeholder="Edad" />
-        </div>
-        <div class="card flex justify-center">
-            <InputText name= "Genero" type="text" v-model="genero" placeholder="Genero" />
-        </div>
-        <div class="card flex justify-center">
-            <InputText name= "Cedula" type="text" v-model="cedula" placeholder="Cedula" />
-        </div>
-        <div class="card flex justify-center ">
-            <Button label="Guardar" @click="guardarDatos"/>
-        </div>      
-    </div>
-    <div class="card">
-        <DataTable :value="personas" :showGridlines="true" tableStyle="min-width: 50rem ">
-            <Column field="id" header="ID"></Column>
-            <Column field="nombre" header="Nombre"></Column>
-            <Column field="apellido" header="Apellido"></Column>
-            <Column field="edad" header="Edad"></Column>
-            <Column field="genero" header="Genero"></Column>
-            <Column field="cedula" header="Cedula"></Column>
-        </DataTable>
-    </div>
+    <form class="form-container" >
+        <InputText name="Nombre" type="text" v-model="nombre" placeholder="Nombre" />
+        <InputText name="Apellido" type="text" v-model="apellido" placeholder="Apellido" />
+        <InputText name="Edad" type="number" v-model="edad" placeholder="Edad" />
+        <InputText name="Genero" type="text" v-model="genero" placeholder="Genero" />
+        <InputText name="Cedula" type="text" v-model="cedula" placeholder="Cedula" />
+        <Button label="Guardar" @click="guardarDatos"/>
+    </form>
+    <DataTable class="card" :value="personas" :showGridlines="true" tableStyle="min-width: 50rem ">
+        <Column field="id" header="ID"></Column>
+        <Column field="nombre" header="Nombre"></Column>
+        <Column field="apellido" header="Apellido"></Column>
+        <Column field="edad" header="Edad"></Column>
+        <Column field="genero" header="Genero"></Column>
+        <Column field="cedula" header="Cedula"></Column>
+    </DataTable>
 </template>
-  
-  
+
+
 <style scoped>
     .form-container{
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+        gap: 1rem;
+
     }
-    div.card {
+    .card {
         margin: 10px;
     }
 
 </style>
-  
