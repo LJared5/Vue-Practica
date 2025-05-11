@@ -3,17 +3,22 @@
 </script>
 
 <template>
-  <div>
-    <h1>Tabla de Datos</h1>
+    <header>
+      <h1> Tabla De Datos</h1>
+    </header>
       <DataTable />
-  </div>
+
 </template>
 
 <style scoped>
-  h1 {
+  header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: red;
+    justify-content: center;
   }
+
+  header h1 {
+    font-size: 36px;
+  }
+
 </style>
