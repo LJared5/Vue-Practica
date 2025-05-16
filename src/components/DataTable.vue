@@ -78,21 +78,21 @@ function eliminarPersona(id) {
         <Column field="genero" header="Genero"></Column>
         <Column field="cedula" header="Cedula"></Column>
         <Column header="Acciones">
-            <template #body="slotProps">
+            <template #body="{ data }">
                 <Button
                 label="Eliminar"
                 icon="pi pi-trash"
                 outlined
                 rounded
                 severity="danger"
-                @click="eliminarPersona(slotProps.data.id)"/>
+                @click="eliminarPersona(data.id)"/>
                 <Button style="margin-left: 10px;"
                 label="Editar"
                 icon="pi pi-pencil"
                 outlined
                 rounded
                 severity="secondary"
-                @click="editarPersona(slotProps.data.id)"/>
+                @click="editarPersona(data.id)"/>
             </template>
         </Column>
     </DataTable>
